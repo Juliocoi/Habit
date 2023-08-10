@@ -64,8 +64,6 @@ struct SignInView: View {
             .background(Color.white)
             .navigationBarTitle("Login", displayMode: .inline)
             .navigationBarHidden(navigationHidden)
-            
-          
           // para manipular a navigation view vc precisa que o filho dela defina as propriedades que vc quer atribuir.
 
         }
@@ -75,7 +73,6 @@ struct SignInView: View {
 }
 
 extension SignInView {
-
   var emailField: some View {
     TextField("Digite seu e-mail:", text: $email)
       .border(Color.black)
@@ -104,11 +101,11 @@ extension SignInView {
         .foregroundColor(.gray)
         .padding(.top, 48)
       
+      //Usar o ZStack para sobrepor a primeira tela
       ZStack{
         // o navigation link precisa de uma navigationView, que ficará na página p onde o usuário será direcionado.
-        //Usar o ZStack para sobrepor a primeira tela
         NavigationLink(
-          destination: Text("Tela de cadastro"),
+          destination: viewModel.signUpView(),
           tag: 1,
           selection: $action,
           label: { EmptyView() })
