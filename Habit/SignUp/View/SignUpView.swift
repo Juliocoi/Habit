@@ -17,7 +17,7 @@ struct SignUpView: View {
     ZStack {
       ScrollView(showsIndicators: false) {
         VStack(alignment: .center) {
-  
+          
           VStack(alignment: .leading, spacing: 8){
             
             Text("Cadastro")

@@ -1,6 +1,10 @@
 import SwiftUI
+import Combine
 
 class SignUpViewModel: ObservableObject {
+  
+  var publisher: PassthroughSubject<Bool, Never>!
+  
   @Published var uiState: SignUpUIState = .none
   
   func signUp(){
@@ -8,10 +12,10 @@ class SignUpViewModel: ObservableObject {
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
 //      self.uiState = .error("user already exist")
-      self.uiState = .goToHomeScreen
+      self.uiState = .success
+      self.publisher.send(true)
     }
   }
-  
 }
 
 extension SignUpViewModel {

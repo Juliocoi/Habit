@@ -9,11 +9,12 @@ struct SignInView: View {
   
   @State var navigationHidden = true
   
-  @State var action: Int? = 0 // variável usada no navigationLink para informar a nova tela
+  @State var action: Int? = 0
   
   var body: some View {
     
     ZStack {
+      
       if case SignInUIState.goToHomeScreem = viewModel.uiState {
         viewModel.homeView()
       } else {
@@ -64,8 +65,6 @@ struct SignInView: View {
             .background(Color.white)
             .navigationBarTitle("Login", displayMode: .inline)
             .navigationBarHidden(navigationHidden)
-          // para manipular a navigation view vc precisa que o filho dela defina as propriedades que vc quer atribuir.
-
         }
       }
     }
@@ -105,7 +104,7 @@ extension SignInView {
       ZStack{
         // o navigation link precisa de uma navigationView, que ficará na página p onde o usuário será direcionado.
         NavigationLink(
-          destination: viewModel.signUpView(),
+          destination: viewModel.signUpView(), // signUpView está presente na signInViewMode, que por sua vez chamará a função makeSignUpview, que está presente no arquivo de rotas, esta função chamará a makeSignUpView, está chamará a função SignUpView, que será responsável pela renderização da tela signUp.
           tag: 1,
           selection: $action,
           label: { EmptyView() })
