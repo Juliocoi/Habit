@@ -18,8 +18,8 @@ class SignUpViewModel: ObservableObject {
   }
 }
 
-extension SignUpViewModel {
-  func homeView () -> some View {
-    return SignUpViewRouter.makeHomeView()
-  }
-}
+//extension SignUpViewModel {
+//  func homeView () -> some View {
+//    return SignUpViewRouter.makeHomeView()
+//  }
+//}

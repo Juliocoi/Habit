@@ -62,7 +62,6 @@ struct SignInView: View {
             }
           }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 32)
-            .background(Color.white)
             .navigationBarTitle("Login", displayMode: .inline)
             .navigationBarHidden(navigationHidden)
         }
@@ -73,8 +72,7 @@ struct SignInView: View {
 
 extension SignInView {
   var emailField: some View {
-    TextField("Digite seu e-mail:", text: $email)
-      .border(Color.black)
+    EditTextView(text: $email, placeholder: "e-mail", keyboard: .emailAddress, error: "escreva um e-mail válido", failure: email.count < 5)
   }
 }
 
@@ -104,7 +102,7 @@ extension SignInView {
       ZStack{
         // o navigation link precisa de uma navigationView, que ficará na página p onde o usuário será direcionado.
         NavigationLink(
-          destination: viewModel.signUpView(), // signUpView está presente na signInViewMode, que por sua vez chamará a função makeSignUpview, que está presente no arquivo de rotas, esta função chamará a makeSignUpView, está chamará a função SignUpView, que será responsável pela renderização da tela signUp.
+          destination: viewModel.signUpView(),
           tag: 1,
           selection: $action,
           label: { EmptyView() })
