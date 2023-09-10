@@ -11,6 +11,7 @@
 		841517062A81E15900E631BE /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841517052A81E15900E631BE /* SignInViewRouter.swift */; };
 		8415170C2A81E3AF00E631BE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415170B2A81E3AF00E631BE /* HomeView.swift */; };
 		8415170E2A81E3E000E631BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415170D2A81E3E000E631BE /* HomeViewModel.swift */; };
+		841E451A2AAD452F0091C6FE /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E45192AAD452F0091C6FE /* LoadingButtonView.swift */; };
 		8423E6322A83288500A62E0B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423E6312A83288500A62E0B /* SignUpView.swift */; };
 		8423E6362A8338E000A62E0B /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423E6352A8338E000A62E0B /* Gender.swift */; };
 		8435CE792A6715710016D951 /* HabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435CE782A6715710016D951 /* HabitApp.swift */; };
@@ -35,6 +36,7 @@
 		841517052A81E15900E631BE /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		8415170B2A81E3AF00E631BE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8415170D2A81E3E000E631BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		841E45192AAD452F0091C6FE /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		8423E6312A83288500A62E0B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8423E6352A8338E000A62E0B /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		8435CE752A6715710016D951 /* Habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,8 @@
 			children = (
 				8475E4022AAC055E00BD5A0D /* Lang */,
 				84F96D7B2AA7BB1000C565A9 /* View */,
+				84F96D7C2AA7C30000C565A9 /* EditTextView.swift */,
+				841E45192AAD452F0091C6FE /* LoadingButtonView.swift */,
 				8423E6342A8338CB00A62E0B /* Model */,
 			);
 			path = Common;
@@ -246,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				843B500C2AABF800004D3829 /* Style */,
-				84F96D7C2AA7C30000C565A9 /* EditTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				8435CE8C2A6720AC0016D951 /* SplashUIState.swift in Sources */,
 				8415170E2A81E3E000E631BE /* HomeViewModel.swift in Sources */,
 				8435CE792A6715710016D951 /* HabitApp.swift in Sources */,
+				841E451A2AAD452F0091C6FE /* LoadingButtonView.swift in Sources */,
 				8475E4042AAC057E00BD5A0D /* String+Extension.swift in Sources */,
 				84CDD3892A843D1600520E1E /* SignUpViewRouter.swift in Sources */,
 				8435CE8A2A671ED20016D951 /* SplashView.swift in Sources */,
