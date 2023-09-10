@@ -72,14 +72,23 @@ struct SignInView: View {
 
 extension SignInView {
   var emailField: some View {
-    EditTextView(text: $email, placeholder: "e-mail", keyboard: .emailAddress, error: "escreva um e-mail válido", failure: email.count < 5)
+    EditTextView(text: $email,
+                 placeholder: "e-mail",
+                 keyboard: .emailAddress,
+                 error: "E-mail válido",
+                 failure: !email.isEmail())
   }
 }
 
 extension SignInView {
   var passwordField: some View{
-    SecureField("Digite sua senha", text: $password)
-      .border(Color.orange)
+    EditTextView(text: $password,
+                 placeholder: "senha",
+                 keyboard: .emailAddress,
+                 error: "A senha deve ter ao menos 8 characteres",
+                 failure: password.count < 8,
+                 isSecure: true
+    )
   }
 }
 

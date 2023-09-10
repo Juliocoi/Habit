@@ -8,15 +8,24 @@ struct EditTextView: View {
   var keyboard: UIKeyboardType = .default
   var error: String? = nil
   var failure: Bool? = nil
+  var isSecure: Bool = false
   
   var body: some View {
     VStack {
-      TextField(placeholder, text: $text)
-        .foregroundColor(Color("textField"))
-        .keyboardType(keyboard)
-        .textFieldStyle(CustomTextFieldStyle())
-        
-// ########### tratamento de erros
+// Campo de senha
+      if isSecure {
+        SecureField(placeholder, text: $text)
+          .foregroundColor(Color("textField"))
+          .keyboardType(keyboard)
+          .textFieldStyle(CustomTextFieldStyle())
+// campo de e-mail
+      } else {
+        TextField(placeholder, text: $text)
+          .foregroundColor(Color("textField"))
+          .keyboardType(keyboard)
+          .textFieldStyle(CustomTextFieldStyle())
+      }
+// ########### erro da validação
       if let error = error, failure == true, !text.isEmpty  {
         Text(error)
           .foregroundColor(.red)
@@ -33,9 +42,10 @@ struct EditTextView_Previews: PreviewProvider {
     ForEach(ColorScheme.allCases, id: \.self){ value in
       VStack{
       EditTextView(text: .constant(""),
-                     placeholder: "e-mail",
+                     placeholder: "senha",
                      error: "Campo inválido",
-                     failure: "a@a".count < 5)
+                     failure: "a@a.com".count < 3
+      )
           .padding()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
